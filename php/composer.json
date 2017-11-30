@@ -1,0 +1,30 @@
+{
+    "name": "btccom/pushtx-php",
+    "description": "Pushtx PHP Library",
+    "keywords": [
+        "pushtx",
+        "php",
+        "api"
+    ],
+    "homepage": "https://pushtx.btc.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pushtx and contributors",
+            "homepage": "https://github.com/btccom/pushtx-sdk/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Pushtx\\": "lib/"
+        }
+    },
+    "extra": {
+        "branch-alias": {}
+    }
+}

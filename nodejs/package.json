@@ -1,0 +1,32 @@
+{
+  "name": "pushtx",
+  "version": "1.0.0",
+  "description": "pushtx sdk",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btccom/pushtx-sdk.git"
+  },
+  "keywords": [
+    "pushtx",
+    "pushtx-sdk",
+    "nodejs"
+  ],
+  "author": "dubuqingfeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/btccom/pushtx-sdk/issues"
+  },
+  "homepage": "https://github.com/btccom/pushtx-sdk#readme",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
