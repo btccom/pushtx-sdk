@@ -7,6 +7,7 @@ class Config
     protected static $ins = null;
     protected static $data = array(
         "merchant_create_order" => "/api/order/merchant",
+        "merchant_get_balance" => "/api/balance/merchant"
     );
     public static function getIns()
     {
