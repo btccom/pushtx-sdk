@@ -12,7 +12,7 @@ module.exports = class Pushtx {
     createMerchantOrder(txhash, description) {
         return new Promise((resolve, reject) => {
             const nonce = Math.random().toString(36).substr(2);
-            let sign = this.createSign([txhash, description, this._config['app_id'], nonce, this._config['secret_key']]);
+            let sign = this.createSign([txhash, description, this._config['app_id'], nonce, this._config['secret_key']], nonce);
             request.post(this._config['base_url'] + '/api/order/merchant', {
                 form: {
                     sign: sign,
@@ -36,7 +36,7 @@ module.exports = class Pushtx {
     getBalance() {
         return new Promise((resolve, reject) => {
             const nonce = Math.random().toString(36).substr(2);
-            let sign = this.createSign([this._config['app_id'], nonce, this._config['secret_key']]);
+            let sign = this.createSign([this._config['app_id'], nonce, this._config['secret_key']], nonce);
             request.post(this._config['base_url'] + '/api/balance/merchant', {
                 form: {
                     sign: sign,
@@ -55,7 +55,7 @@ module.exports = class Pushtx {
         }); 
     }
 
-    createSign(param) {
+    createSign(param, nonce) {
         const crypto = require('crypto');
         const real_sign = crypto.createHmac('sha256', nonce).update(param.join('|')).digest('hex');
         return real_sign;

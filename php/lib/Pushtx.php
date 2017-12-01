@@ -54,7 +54,7 @@ class Pushtx implements ClientInterface
 
     public function createMerchantOrder($txhash, $description) {
         $nonce = $this->createNonce();
-        $sign = $this->createSign([$txhash, $description, $this->app_id, $nonce, $this->secret_key]);
+        $sign = $this->createSign([$txhash, $description, $this->app_id, $nonce, $this->secret_key], $nonce);
         return $this->post(Config::getIns()->merchant_create_order, [
             'app_id' => $this->app_id,
             'nonce' => $nonce,
@@ -66,7 +66,7 @@ class Pushtx implements ClientInterface
 
     public function getBalance() {
         $nonce = $this->createNonce();
-        $sign = $this->createSign([$this->app_id, $nonce, $this->secret_key]);
+        $sign = $this->createSign([$this->app_id, $nonce, $this->secret_key], $nonce);
         return $this->post(Config::getIns()->merchant_get_balance, [
             'app_id' => $this->app_id,
             'nonce' => $nonce,
@@ -90,7 +90,7 @@ class Pushtx implements ClientInterface
     /**
      * Create Sign
      */
-    protected function createSign($array) {
+    protected function createSign($array, $nonce) {
         $encrypt = implode('|', $array);
         $sign = hash_hmac('sha256', $encrypt, $nonce);
         return $sign;
