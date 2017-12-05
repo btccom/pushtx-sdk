@@ -1,7 +1,7 @@
 "use strict";
 const request = require("request");
 
-module.exports = class Pushtx {
+module.exports = class PushtxMerchant {
     constructor(config) {
         this._config = {};
         this._config['app_id'] = config['app_id'];

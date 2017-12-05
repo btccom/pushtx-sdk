@@ -1,5 +1,5 @@
-var Pushtx = require('../index.js');
-const pushtx = new Pushtx({
+var PushtxMerchant = require('../index.js');
+const pushtx = new PushtxMerchant({
     app_id: 'app_id',
     secret_key: 'secret_key',
     base_url: 'https://sandbox-pushtx.btc.com'

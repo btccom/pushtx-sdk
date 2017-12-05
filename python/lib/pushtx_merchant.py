@@ -22,7 +22,33 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-class PushtxError(Exception):
-    def __init__(self, message=None, http_body=None, http_status=None,
-                 json_body=None):
-        super(PushtxError, self).__init__(message)
+import config
+from lib.client import Client
+from .utils import create_nonce, create_sign
+
+
+class PushtxMerchant(Client):
+    def __init__(self, app_id, secret_key, endpoint, http_client=None):
+        super(PushtxMerchant, self).__init__(endpoint, http_client)
+        self.app_id = app_id
+        self.secret_key = secret_key
+
+    def get_balance(self):
+        nonce = create_nonce()
+        sign = create_sign([self.app_id, nonce, self.secret_key], nonce)
+        return super(PushtxMerchant, self)._post(config.api_url['merchant_get_balance'], {
+            'app_id': self.app_id,
+            'nonce': nonce,
+            'sign': sign
+        })
+
+    def create_order(self, txhash, description):
+        nonce = create_nonce()
+        sign = create_sign([txhash, description, self.app_id, nonce, self.secret_key], nonce)
+        return super(PushtxMerchant, self)._post(config.api_url['merchant_create_order'], {
+            'app_id': self.app_id,
+            'nonce': nonce,
+            'sign': sign,
+            'txhash': txhash,
+            'description': description
+        })

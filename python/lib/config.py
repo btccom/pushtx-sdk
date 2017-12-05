@@ -22,7 +22,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-class PushtxError(Exception):
-    def __init__(self, message=None, http_body=None, http_status=None,
-                 json_body=None):
-        super(PushtxError, self).__init__(message)
+api_url = {
+    'merchant_create_order': '/api/order/merchant',
+    'merchant_get_balance': '/api/balance/merchant'
+}

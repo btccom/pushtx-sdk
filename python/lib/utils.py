@@ -22,7 +22,22 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-class PushtxError(Exception):
-    def __init__(self, message=None, http_body=None, http_status=None,
-                 json_body=None):
-        super(PushtxError, self).__init__(message)
+import hashlib
+import hmac
+import random
+import string
+
+
+def create_sign(param, nonce):
+    return hmac_sha256_encrypt('|'.join(param), key=nonce)
+
+
+def hmac_sha256_encrypt(param, key):
+    hash = hmac.new(key, param, hashlib.sha256)
+    return hash.hexdigest()
+
+def create_nonce(size=20):
+    return ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(size))
+
+def txhash_validator(txhash):
+    pass
