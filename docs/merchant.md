@@ -17,7 +17,7 @@ POST
 | 参数名 | 类型 | 必填 | 描述 | 默认值 | 参考值 |
 | --- | :---: | :---: | --- | --- | --- |
 | txhash | string | 是 | 交易hash | 无 | ff602f8d64b9188f6831f62486e1391c8281ed6abc71c8862f59a7195d591328 |
-| description | string | 是 | 交易描述 | 无 |  |
+| description | string | 是 | 交易描述 | 可填空字符串 |  |
 | app_id | string | 是 | 应用ID | 无 | 281ed6abc71c8862f59a7195d591328 |
 | nonce | string | 是 | 随机字符串，不得少于10位 | 无 | sfsdfsvxcvwfw2esfsaf |
 | sign | string | 是 | 签名 | 无 | 生成规则：`hmac256(txhash+ '\|' + description + '\|' + app_id + '\|' + nonce + '\|' + secret_key)`, 以nonce为hmac sha256的key|
