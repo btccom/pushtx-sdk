@@ -3,7 +3,7 @@
 The process of transmission error code:
 
 | Parameter Name | Error Code | Description |
-| --- |: ---: | --- |
+| --- | :---: | --- |
 | RPCUnavailable | 100 | RPC Not Available |
 | TxUnavailable | 101 | Transactional Hash is not available |
 | TxConfirmed | 102 | Transaction Hash Confirmed |
