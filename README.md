@@ -1,16 +1,16 @@
-## Operation guide for Transaction Accelerator Access SDK
+## Operation guide for Transaction Accelerator Merchant SDK
 
 ### Description
 
-Transaction Accelerator access SDK for business account
+Transaction Accelerator Merchant SDK
 
 ### Steps
 
-#### 1. Apply for business account
+#### 1. Apply for merchant account
 
-Contact BTC.com and provide your account information on BTC.com (Email address, phone number or UID), provide company or personal information, once your information approved by BTC.com audit staff, you can get access to use a business account.
+Contact BTC.com and provide your account information on BTC.com (Email address, phone number or UID), provide company or personal information, once your information approved by BTC.com audit staff, you can get access to use a merchant account.
 
-#### 2. Recharge for business account
+#### 2. Recharge for merchant account
 
 Contact BTC.com, recharge your account by bank transfer or digital currency.
 
