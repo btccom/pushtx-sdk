@@ -1,9 +1,9 @@
-# Merchant create order
+# Create order on business account
 
 > Created: 2017-11-29
 
 ## Interface Introduction
-Merchants use created apps and signed signatures to spend and accelerate unconfirmed deals.
+Business account user can consume by created App and signed signature, accelerate unconfirmed transaction.
 
 ## interface details
 
@@ -45,12 +45,12 @@ POST
 
 Specific reference [error code](./Errorcode.en.md)
 
-# Merchants get the balance
+# Check account balance for business account 
 
 > Created: 2017-12-01
 
 ## Interface Introduction
-The merchant obtains the merchant's balance through this interface
+Users can check account balance through this interface
 
 ## interface details
 

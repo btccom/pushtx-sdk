@@ -1,26 +1,26 @@
-## Pushtx Transaction Accelerated Access SDK Guide
+## Operation guide for Transaction Accelerator Access SDK
 
 ### Description
 
-Pushtx Transaction Accelerated Merchant SDK
+Transaction Accelerator access SDK for business account
 
-### steps
+### Steps
 
-#### 1. Apply for a business
+#### 1. Apply for business account
 
-Contact BTC.com and provide BTC.com account information (email or phone or UID), provide company or personal information, and BTC.com reviews to access the merchant page.
+Contact BTC.com and provide your account information on BTC.com (Email address, phone number or UID), provide company or personal information, once your information approved by BTC.com audit staff, you can get access to use a business account.
 
-#### 2. Merchants recharge
+#### 2. Recharge for business account
 
-Contact BTC.com, reload using bank transfer or digital currency, and contact the appropriate person for reload.
+Contact BTC.com, recharge your account by bank transfer or digital currency.
 
 #### 3. Use sdk or interface for consumption
 
 Use the SDK for integration.
 
-### SDK instructions
+### SDK Introduction 
 
-Temporarily currently nodejs, php, python version sdk, other languages can be generated according to the rules signature call.
+Currently have nodejs, php, python version for SDK, other languages can be generated according to the rules of signature call.
 
 Sandbox environment is now available (https://sandbox-pushtx.btc.com), the constructor can be passed in.
 
@@ -37,7 +37,7 @@ composer install
 ```
 
 Python:
-Implemented a variety of client, according to their actual use, and compatible with Python2 / 3.
+A variety of client can be implemented according to different uses, compatible with Python2 / 3
 
 ```
 pip install
